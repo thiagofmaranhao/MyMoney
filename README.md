@@ -59,9 +59,9 @@ Sistema de Controle Financeiro
       - Testes de Unidade
       - Testes de api usando pacotes AspNetCore
       - Teste de Carga
-    - Deploy IIS 
+    - Deploy IIS
+    - [Em Desenvolvimento] Segurança
     - [Pendente] Eventos (eventos de criação, alteração e exclusão) Definir ferramenta
-    - [Pendente] Autenticação de usuário
 - [Pendente] GerenciadorDeAlertas [Não Iniciado]
   - [Pendente] Tipos de Alertas
     - [Pendente] Enviar Alertas ao iniciar serviço
