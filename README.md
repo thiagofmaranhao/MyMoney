@@ -62,12 +62,12 @@ Sistema de Controle Financeiro
     - [X] Deploy IIS 
     - [ ] RabbitMQ (eventos de criação, alteração e exclusão) CQRS
     - [ ] Autenticação de usuário
-- GerenciadorDeAlertas
+- GerenciadorDeAlertas [Não Iniciado]
   - Tipos de Alertas
     - [ ] Enviar Alertas ao iniciar serviço
     - [ ] Enviar Alerta diário em horário específico
     - [ ] Enviar Alerta após receber evento de inclusão, alteração e exclusão
-- Web
+- Web [Não Iniciado]
   - [ ] Gerenciamento das Contas à pagar em aplicação Web
-- App
+- App [Não Iniciado]
   - [ ] Gerenciamento das Contas à pagar em mobile app
