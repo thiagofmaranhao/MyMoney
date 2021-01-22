@@ -1,0 +1,34 @@
+{
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 19567,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 306.82030970511585,
+    "medianResTime" : 282.0,
+    "minResTime" : 170.0,
+    "maxResTime" : 1880.0,
+    "pct1ResTime" : 384.0,
+    "pct2ResTime" : 507.0,
+    "pct3ResTime" : 803.0,
+    "throughput" : 324.7203690796243,
+    "receivedKBytesPerSec" : 127.1592536208885,
+    "sentKBytesPerSec" : 0.0
+  },
+  "Criar Conta a Pagar" : {
+    "transaction" : "Criar Conta a Pagar",
+    "sampleCount" : 19567,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 306.82030970511585,
+    "medianResTime" : 282.0,
+    "minResTime" : 170.0,
+    "maxResTime" : 1880.0,
+    "pct1ResTime" : 384.0,
+    "pct2ResTime" : 507.0,
+    "pct3ResTime" : 803.0,
+    "throughput" : 324.7203690796243,
+    "receivedKBytesPerSec" : 127.1592536208885,
+    "sentKBytesPerSec" : 0.0
+  }
+}
