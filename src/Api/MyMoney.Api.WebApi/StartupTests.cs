@@ -33,6 +33,8 @@ namespace MyMoney.Api.WebApi
 
             services.AddApiConfig();
 
+            services.AddIdentityConfig(Configuration);
+
             services.AddSwaggerConfig();
 
             services.ResolveDependencies();
