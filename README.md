@@ -52,17 +52,17 @@ Sistema de Controle Financeiro
     - AutoMapper    
     - Log (KissLog)
     - HealthCheck
-    - Integração com Telegram (aslerta de erros HelthCheck)    
-    - Postman (teste da API)
+    - Integração com Telegram (aslerta de erros HelthCheck) 
     - Testes
       - TDD
       - Testes de Unidade
       - Testes de api usando pacotes AspNetCore
       - Teste de Carga
-    - [Em Desenvolvimento] Segurança
+    - Segurança
       - Autenticação via Identity
       - Customização de mensagens do Identity para Português
-      - [Pendente] JWT
+      - JWT
+      - Autorização baseada em Claims
     - Deploy
       - IIS Local
       - [Pendente] Cloud
