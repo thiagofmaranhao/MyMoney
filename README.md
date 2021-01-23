@@ -33,41 +33,46 @@ Sistema de Controle Financeiro
 ## Atividades de Implementação
 - Api
   - Funcionalidades
-    - [ ] Contas à Pagar 
-      - [X] Criar 
-      - [ ] Alterar
-      - [ ] Excluir
-      - [ ] Obter
-      - [ ] ObterTodas
+    - [Em Desenvolvimento] Contas à Pagar 
+      - Criar 
+      - [Pendente] Alterar
+      - [Pendente] Excluir
+      - [Pendente] Obter
+      - [Pendente] ObterTodas
   - Arquitetura do Software (Projetos)
-    - [X] MyMoney.Api (WebApi)
-    - [X] MyMoney.Business (Camada de negócio)
-    - [X] MyMoney.Data (Camada de Acesso a Dados)
+    - MyMoney.Api (WebApi)
+    - MyMoney.Business (Camada de negócio)
+    - MyMoney.Data (Camada de Acesso a Dados)
   - Tecnologias & Frameworks Utilizados:
-    - [X] Versionamento de API
-    - [X] Swagger (gerado automaticamente)
-    - [X] EntityFramework
-    - [X] BDD (SpecFLow)			
-    - [X] EntityFramework + UnitOfWork
-    - [X] AutoMapper    
-    - [X] Log (KissLog)
-    - [X] HealthCheck
-    - [X] Integração com Telegram (erros)    
-    - [X] Postman (teste da API)
-    - [X] Testes
-      - [X] TDD
-      - [X] Testes de Unidade
-      - [X] Testes de api usando pacotes AspNetCore
-      - [X] Teste de Carga
-    - [X] Deploy IIS 
-    - [ ] RabbitMQ (eventos de criação, alteração e exclusão) CQRS
-    - [ ] Autenticação de usuário
-- GerenciadorDeAlertas
-  - Tipos de Alertas
-    - [ ] Enviar Alertas ao iniciar serviço
-    - [ ] Enviar Alerta diário em horário específico
-    - [ ] Enviar Alerta após receber evento de inclusão, alteração e exclusão
-- Web
-  - [ ] Gerenciamento das Contas à pagar em aplicação Web
-- App
-  - [ ] Gerenciamento das Contas à pagar em mobile app
+    - Versionamento de API
+    - Swagger (gerado automaticamente)
+    - EntityFramework
+    - BDD (SpecFLow)			
+    - EntityFramework + UnitOfWork
+    - AutoMapper    
+    - Log (KissLog)
+    - HealthCheck
+    - Integração com Telegram (aslerta de erros HelthCheck)    
+    - Postman (teste da API)
+    - Testes
+      - TDD
+      - Testes de Unidade
+      - Testes de api usando pacotes AspNetCore
+      - Teste de Carga
+    - [Em Desenvolvimento] Segurança
+      - Autenticação via Identity
+      - Customização de mensagens do Identity para Português
+      - [Pendente] JWT
+    - Deploy
+      - IIS Local
+      - [Pendente] Cloud
+    - [Pendente] Eventos (eventos de criação, alteração e exclusão) Definir ferramenta
+- [Pendente] GerenciadorDeAlertas [Não Iniciado]
+  - [Pendente] Tipos de Alertas
+    - [Pendente] Enviar Alertas ao iniciar serviço
+    - [Pendente] Enviar Alerta diário em horário específico
+    - [Pendente] Enviar Alerta após receber evento de inclusão, alteração e exclusão
+- [Pendente] Web
+  - [Pendente] Gerenciamento das Contas à pagar em aplicação Web
+- [Pendente] App
+  - [Pendente] Gerenciamento das Contas à pagar em mobile app
