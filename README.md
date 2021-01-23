@@ -66,7 +66,6 @@ Sistema de Controle Financeiro
     - Deploy
       - IIS Local
       - [Pendente] Cloud
-    - [Em Desenvolvimento] Segurança
     - [Pendente] Eventos (eventos de criação, alteração e exclusão) Definir ferramenta
 - [Pendente] GerenciadorDeAlertas [Não Iniciado]
   - [Pendente] Tipos de Alertas
