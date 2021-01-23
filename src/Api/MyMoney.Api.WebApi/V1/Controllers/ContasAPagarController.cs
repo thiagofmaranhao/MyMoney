@@ -1,14 +1,17 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
 using KissLog;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyMoney.Api.Business.Interfaces;
 using MyMoney.Api.Business.Models;
 using MyMoney.Api.WebApi.Controllers;
-using MyMoney.Api.WebApi.ViewModel;
+using MyMoney.Api.WebApi.Extensions;
+using MyMoney.Api.WebApi.ViewModels;
 
 namespace MyMoney.Api.WebApi.V1.Controllers
 {
+    [Authorize]
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/contasapagar")]
     public class ContasAPagarController : MainController
@@ -24,6 +27,7 @@ namespace MyMoney.Api.WebApi.V1.Controllers
             _mapper = mapper;
         }
 
+        [ClaimsAuthorize("ContasAPagar","Criar")]
         [HttpPost]
         public async Task<ActionResult<ContaAPagarViewModel>> CriarAsync(ContaAPagarViewModel contaAPagarViewModel)
         {

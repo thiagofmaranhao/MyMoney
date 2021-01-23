@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using MyMoney.Api.Business.Interfaces;
 using MyMoney.Api.Business.Notifications;
-using MyMoney.Api.WebApi.ViewModel;
+using MyMoney.Api.WebApi.ViewModels;
 
 namespace MyMoney.Api.WebApi.Controllers
 {

@@ -1,4 +1,4 @@
-﻿namespace MyMoney.Api.WebApi.ViewModel
+﻿namespace MyMoney.Api.WebApi.ViewModels
 {
     public class RetornoSucessoViewModel
     {

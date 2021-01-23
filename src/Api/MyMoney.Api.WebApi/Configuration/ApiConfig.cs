@@ -49,6 +49,8 @@ namespace MyMoney.Api.WebApi.Configuration
 
             app.UseRouting();
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseKissLogConfig(configuration);

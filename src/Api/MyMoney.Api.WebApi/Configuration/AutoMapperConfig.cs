@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MyMoney.Api.Business.Models;
-using MyMoney.Api.WebApi.ViewModel;
+using MyMoney.Api.WebApi.ViewModels;
 
 namespace MyMoney.Api.WebApi.Configuration
 {

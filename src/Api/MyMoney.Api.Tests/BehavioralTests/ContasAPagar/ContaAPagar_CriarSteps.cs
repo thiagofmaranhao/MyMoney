@@ -4,10 +4,10 @@ using System.Net;
 using FluentAssertions;
 using MyMoney.Api.Tests.Config;
 using MyMoney.Api.WebApi;
-using MyMoney.Api.WebApi.ViewModel;
 using Newtonsoft.Json;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using MyMoney.Api.WebApi.ViewModels;
 using TechTalk.SpecFlow;
 using Xunit;
 

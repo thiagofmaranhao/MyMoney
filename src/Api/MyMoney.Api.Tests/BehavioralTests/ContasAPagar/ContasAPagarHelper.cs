@@ -1,8 +1,8 @@
 ﻿using System;
-using MyMoney.Api.WebApi.ViewModel;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using MyMoney.Api.WebApi.ViewModels;
 
 namespace MyMoney.Api.Tests.BehavioralTests.ContasAPagar
 {

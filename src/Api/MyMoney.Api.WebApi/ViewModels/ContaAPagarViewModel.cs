@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace MyMoney.Api.WebApi.ViewModel
+namespace MyMoney.Api.WebApi.ViewModels
 {
     public class ContaAPagarViewModel
     {

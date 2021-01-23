@@ -31,6 +31,8 @@ namespace MyMoney.Api.WebApi
                     .UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            services.AddIdentityConfig(Configuration);
+
             services.AddAutoMapper(typeof(Startup));
 
             services.AddSwaggerConfig();
