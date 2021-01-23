@@ -59,6 +59,10 @@ Sistema de Controle Financeiro
       - Testes de Unidade
       - Testes de api usando pacotes AspNetCore
       - Teste de Carga
+    - [Em Desenvolvimento] Segurança
+      - Autenticação via Identity
+      - Customização de mensagens do Identity para Português
+      - [Pendente] JWT
     - Deploy
       - IIS Local
       - [Pendente] Cloud
