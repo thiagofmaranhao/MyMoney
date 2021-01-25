@@ -16,8 +16,10 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.x    
+        dotnet-version: 3.1.x
+    - name: Restore dependencies
+      run: dotnet restore /home/runner/work/MyMoney/MyMoney/src/Api/MyMoney.Api.WebApi.sln
     - name: Build
       run: dotnet build --configuration Release /home/runner/work/MyMoney/MyMoney/src/Api/MyMoney.Api.WebApi.sln
-    - name: Test
-      run: dotnet test --configuration Release /home/runner/work/MyMoney/MyMoney/src/Api/MyMoney.Api.WebApi.sln
+    #- name: Test
+    #  run: dotnet test --configuration Release /home/runner/work/MyMoney/MyMoney/src/Api/MyMoney.Api.WebApi.sln
