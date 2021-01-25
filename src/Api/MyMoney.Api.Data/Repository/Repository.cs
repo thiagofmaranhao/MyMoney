@@ -33,7 +33,7 @@ namespace MyMoney.Api.Data.Repository
 
         public virtual async Task<List<TEntity>> ObterTodosAsync()
         {
-            return await DbSet.ToListAsync();
+            return await DbSet.AsNoTracking().ToListAsync();
         }
 
         public virtual void Adicionar(TEntity entity)

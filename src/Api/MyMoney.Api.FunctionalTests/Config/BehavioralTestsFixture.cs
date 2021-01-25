@@ -3,6 +3,8 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using MyMoney.Api.Data.Context;
 using MyMoney.Api.Data.Repository;
 using MyMoney.Api.WebApi;
 using MyMoney.Api.WebApi.ViewModels;
@@ -20,6 +22,7 @@ namespace MyMoney.Api.FunctionalTests.Config
         public readonly HttpClient Client;
         public readonly RepositoryTestsBase RepositoryTests;
         public readonly ContaAPagarRepository ContaAPagarRepository;
+        public readonly MyMoneyDbContext Context;
         public readonly string Email;
         public LoginResponseViewModel LoginResponse { get; private set; }
         private const string Password = "Teste@123";
@@ -29,7 +32,8 @@ namespace MyMoney.Api.FunctionalTests.Config
             Factory = new MyMoneyApiFactory<TStartup>();
             Client = Factory.CreateClient();
             RepositoryTests = new RepositoryTestsBase();
-            ContaAPagarRepository = new ContaAPagarRepository(RepositoryTests.GetContext());
+            Context = RepositoryTests.GetContext();
+            ContaAPagarRepository = new ContaAPagarRepository(Context);
             Email = "teste@teste.com";
         }
 

@@ -26,13 +26,6 @@ namespace MyMoney.Api.FunctionalTests.BehavioralTests.ContasAPagar
             _contasAPagarHelper = new ContasAPagarHelper(_testsFixture.Client);
         }
 
-        [When(@"Autenticação realizada")]
-        public async Task QuandoAutenticacaoRealizadaAsync()
-        {
-            await _testsFixture.RealizarAutenticacaoAsync();
-        }
-
-
         [When(@"for adiconada uma nova conta a pagar")]
         public async Task QuandoForAdiconadaUmaNovaContaAPagarAsync()
         {

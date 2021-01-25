@@ -48,5 +48,10 @@ namespace MyMoney.Api.FunctionalTests.BehavioralTests.ContasAPagar
         {
             Response = await _client.PostAsJsonAsync("api/v1/contasapagar", contaAPagar);
         }
+
+        public async Task ObterTodasContasAPagarAsync()
+        {
+            Response = await _client.GetAsync("api/v1/contasapagar");
+        }
     }
 }
