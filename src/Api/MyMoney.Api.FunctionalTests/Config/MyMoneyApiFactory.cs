@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 
-namespace MyMoney.Api.Tests.Config
+namespace MyMoney.Api.FunctionalTests.Config
 {
     public class MyMoneyApiFactory<TStartup> : WebApplicationFactory<TStartup> where TStartup : class
     {

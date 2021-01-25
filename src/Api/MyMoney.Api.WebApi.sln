@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMoney.Api.Business", "MyM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMoney.Api.Data", "MyMoney.Api.Data\MyMoney.Api.Data.csproj", "{7D28B854-EAF6-4ABC-9A20-165E25E08804}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMoney.Api.Tests", "MyMoney.Api.Tests\MyMoney.Api.Tests.csproj", "{1127B4AB-8E40-4A6F-B739-AA060ECDCADB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoney.Api.UnitTests", "MyMoney.Api.UnitTests\MyMoney.Api.UnitTests.csproj", "{86CA4868-A183-4BAF-88B1-D44F2993E8CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoney.Api.FunctionalTests", "MyMoney.Api.FunctionalTests\MyMoney.Api.FunctionalTests.csproj", "{CF860DBA-EC50-4E00-A84A-97F3FCB54F95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoney.Api.LoadTests", "MyMoney.Api.LoadTests\MyMoney.Api.LoadTests.csproj", "{66D2E124-2FDC-4154-9FD2-5A5893FE768E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,11 +40,24 @@ Global
 		{7D28B854-EAF6-4ABC-9A20-165E25E08804}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
 		{7D28B854-EAF6-4ABC-9A20-165E25E08804}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D28B854-EAF6-4ABC-9A20-165E25E08804}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1127B4AB-8E40-4A6F-B739-AA060ECDCADB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1127B4AB-8E40-4A6F-B739-AA060ECDCADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1127B4AB-8E40-4A6F-B739-AA060ECDCADB}.Deploy|Any CPU.ActiveCfg = Deploy|Any CPU
-		{1127B4AB-8E40-4A6F-B739-AA060ECDCADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1127B4AB-8E40-4A6F-B739-AA060ECDCADB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86CA4868-A183-4BAF-88B1-D44F2993E8CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86CA4868-A183-4BAF-88B1-D44F2993E8CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86CA4868-A183-4BAF-88B1-D44F2993E8CC}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{86CA4868-A183-4BAF-88B1-D44F2993E8CC}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{86CA4868-A183-4BAF-88B1-D44F2993E8CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86CA4868-A183-4BAF-88B1-D44F2993E8CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF860DBA-EC50-4E00-A84A-97F3FCB54F95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF860DBA-EC50-4E00-A84A-97F3FCB54F95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF860DBA-EC50-4E00-A84A-97F3FCB54F95}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF860DBA-EC50-4E00-A84A-97F3FCB54F95}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{CF860DBA-EC50-4E00-A84A-97F3FCB54F95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF860DBA-EC50-4E00-A84A-97F3FCB54F95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66D2E124-2FDC-4154-9FD2-5A5893FE768E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D2E124-2FDC-4154-9FD2-5A5893FE768E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D2E124-2FDC-4154-9FD2-5A5893FE768E}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D2E124-2FDC-4154-9FD2-5A5893FE768E}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{66D2E124-2FDC-4154-9FD2-5A5893FE768E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D2E124-2FDC-4154-9FD2-5A5893FE768E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

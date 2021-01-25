@@ -1,16 +1,12 @@
-﻿using System;
-using System.Net.Http;
-using System.Net.Http.Json;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 using FluentAssertions;
-using MyMoney.Api.Tests.Config;
+using MyMoney.Api.FunctionalTests.Config;
 using MyMoney.Api.WebApi;
-using MyMoney.Api.WebApi.ViewModels;
-using Newtonsoft.Json;
 using TechTalk.SpecFlow;
 using Xunit;
 
-namespace MyMoney.Api.Tests.BehavioralTests.Auth
+namespace MyMoney.Api.FunctionalTests.BehavioralTests.Auth
 {
     [Binding]
     [Collection(nameof(BehavioralTestsFixtureCollection))]

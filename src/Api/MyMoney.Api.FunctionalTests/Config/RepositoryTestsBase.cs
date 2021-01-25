@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.IO;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using MyMoney.Api.Data.Context;
-using System.IO;
 
-namespace MyMoney.Api.Tests.Config
+namespace MyMoney.Api.FunctionalTests.Config
 {
     public class RepositoryTestsBase
     {

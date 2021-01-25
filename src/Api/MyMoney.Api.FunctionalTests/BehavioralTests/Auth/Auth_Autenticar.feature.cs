@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace MyMoney.Api.Tests.BehavioralTests.Auth
+namespace MyMoney.Api.FunctionalTests.BehavioralTests.Auth
 {
     using TechTalk.SpecFlow;
     using System;
@@ -31,7 +31,7 @@ namespace MyMoney.Api.Tests.BehavioralTests.Auth
 #line 1 "Auth_Autenticar.feature"
 #line hidden
         
-        public Auth_AutenticarFeature(Auth_AutenticarFeature.FixtureData fixtureData, MyMoney_Api_Tests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public Auth_AutenticarFeature(Auth_AutenticarFeature.FixtureData fixtureData, MyMoney_Api_FunctionalTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();

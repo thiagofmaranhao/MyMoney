@@ -1,11 +1,11 @@
-﻿using FluentAssertions;
+﻿using System;
+using System.Linq;
+using FluentAssertions;
 using MyMoney.Api.Business.Models;
 using MyMoney.Api.Business.Models.Validations;
-using System;
-using System.Linq;
 using Xunit;
 
-namespace MyMoney.Api.Tests.UnitTests.Business.Models.Validations
+namespace MyMoney.Api.UnitTests.Business.Models.Validations
 {
     public class ContaAPagarValidationTests
     {

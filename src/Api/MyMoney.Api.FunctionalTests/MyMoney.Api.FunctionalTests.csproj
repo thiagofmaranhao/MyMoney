@@ -1,11 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
-
-    <Configurations>Debug;Release;Deploy</Configurations>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,7 +11,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="3.1.10" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
     <PackageReference Include="Moq" Version="4.15.2" />
-    <PackageReference Include="Moq.AutoMock" Version="2.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="SpecFlow" Version="3.5.14" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.5.14" />
@@ -32,6 +29,32 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyMoney.Api.WebApi\MyMoney.Api.WebApi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="BehavioralTests\Auth\Auth_Autenticar.feature.cs">
+      <Visible>true</Visible>
+      <DependentUpon>%(Filename)</DependentUpon>
+      <DesignTime>true</DesignTime>
+      <AutoGen>true</AutoGen>
+    </Compile>
+    <Compile Update="BehavioralTests\ContasAPagar\ContasAPagar_Criar.feature.cs">
+      <Visible>true</Visible>
+      <DependentUpon>%(Filename)</DependentUpon>
+      <DesignTime>true</DesignTime>
+      <AutoGen>true</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="BehavioralTests\Auth\Auth_Autenticar.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </None>
+    <None Update="BehavioralTests\ContasAPagar\ContasAPagar_Criar.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </None>
   </ItemGroup>
 
 </Project>

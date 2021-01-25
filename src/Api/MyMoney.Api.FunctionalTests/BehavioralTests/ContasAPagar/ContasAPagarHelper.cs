@@ -4,7 +4,7 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using MyMoney.Api.WebApi.ViewModels;
 
-namespace MyMoney.Api.Tests.BehavioralTests.ContasAPagar
+namespace MyMoney.Api.FunctionalTests.BehavioralTests.ContasAPagar
 {
     public class ContasAPagarHelper
     {

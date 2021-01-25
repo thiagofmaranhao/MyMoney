@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using FluentAssertions;
-using MyMoney.Api.Tests.Config;
-using MyMoney.Api.WebApi;
-using Newtonsoft.Json;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using FluentAssertions;
+using MyMoney.Api.FunctionalTests.Config;
+using MyMoney.Api.WebApi;
 using MyMoney.Api.WebApi.ViewModels;
+using Newtonsoft.Json;
 using TechTalk.SpecFlow;
 using Xunit;
 
-namespace MyMoney.Api.Tests.BehavioralTests.ContasAPagar
+namespace MyMoney.Api.FunctionalTests.BehavioralTests.ContasAPagar
 {
     [Binding]
     [Collection(nameof(BehavioralTestsFixtureCollection))]

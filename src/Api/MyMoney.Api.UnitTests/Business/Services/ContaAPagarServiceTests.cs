@@ -9,7 +9,7 @@ using MyMoney.Api.Business.Notifications;
 using MyMoney.Api.Business.Services;
 using Xunit;
 
-namespace MyMoney.Api.Tests.UnitTests.Business.Services
+namespace MyMoney.Api.UnitTests.Business.Services
 {
     public class ContaAPagarServiceTests
     {

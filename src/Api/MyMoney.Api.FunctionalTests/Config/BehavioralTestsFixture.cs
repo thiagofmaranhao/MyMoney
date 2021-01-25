@@ -3,15 +3,13 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using Castle.Core.Internal;
 using MyMoney.Api.Data.Repository;
-using MyMoney.Api.Tests.UnitTests.Data.Repository;
 using MyMoney.Api.WebApi;
 using MyMoney.Api.WebApi.ViewModels;
 using Newtonsoft.Json;
 using Xunit;
 
-namespace MyMoney.Api.Tests.Config
+namespace MyMoney.Api.FunctionalTests.Config
 {
     [CollectionDefinition(nameof(BehavioralTestsFixtureCollection))]
     public class BehavioralTestsFixtureCollection : ICollectionFixture<BehavioralTestsFixture<StartupTests>> { }
