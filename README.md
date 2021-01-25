@@ -15,11 +15,10 @@ Sistema de Controle Financeiro
   
 ## Módulos Previstos
 - Api
-- Gerenciador de Alertas
 - Web
 - App
 
-## Ferramentas Utilizadas
+## Detalhes Técnicos
 - IDE: Visual Studio Community 2019
 - Linguagem: C#
 - Framework: .NET Core 3.1
@@ -29,6 +28,7 @@ Sistema de Controle Financeiro
   - ReSharper
   - SpecFlow for Visual Studio 2019
   - Fine Code Coverage
+- Integração Contínua (Actions do GitHub) 
 
 ## Atividades de Implementação
 - Api
@@ -66,12 +66,6 @@ Sistema de Controle Financeiro
     - Deploy
       - IIS Local
       - [Pendente] Cloud
-    - [Pendente] Eventos (eventos de criação, alteração e exclusão) Definir ferramenta
-- [Pendente] GerenciadorDeAlertas [Não Iniciado]
-  - [Pendente] Tipos de Alertas
-    - [Pendente] Enviar Alertas ao iniciar serviço
-    - [Pendente] Enviar Alerta diário em horário específico
-    - [Pendente] Enviar Alerta após receber evento de inclusão, alteração e exclusão
 - [Pendente] Web
   - [Pendente] Gerenciamento das Contas à pagar em aplicação Web
 - [Pendente] App
