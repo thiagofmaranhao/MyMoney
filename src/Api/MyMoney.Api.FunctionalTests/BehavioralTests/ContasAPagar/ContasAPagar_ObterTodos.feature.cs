@@ -19,7 +19,7 @@ namespace MyMoney.Api.FunctionalTests.BehavioralTests.ContasAPagar
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.5.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class ContaAPagar_CriarFeature : object, Xunit.IClassFixture<ContaAPagar_CriarFeature.FixtureData>, System.IDisposable
+    public partial class ContaAPagar_ObterTodosFeature : object, Xunit.IClassFixture<ContaAPagar_ObterTodosFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace MyMoney.Api.FunctionalTests.BehavioralTests.ContasAPagar
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "ContasAPagar_Criar.feature"
+#line 1 "ContasAPagar_ObterTodos.feature"
 #line hidden
         
-        public ContaAPagar_CriarFeature(ContaAPagar_CriarFeature.FixtureData fixtureData, MyMoney_Api_FunctionalTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public ContaAPagar_ObterTodosFeature(ContaAPagar_ObterTodosFeature.FixtureData fixtureData, MyMoney_Api_FunctionalTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace MyMoney.Api.FunctionalTests.BehavioralTests.ContasAPagar
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("pt-BR"), "BehavioralTests/ContasAPagar", "Conta A Pagar - Criar", "\tComo cliente da API do MyMoney\r\n\tEu gostaria de incluir uma conta a pagar", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("pt-BR"), "BehavioralTests/ContasAPagar", "Conta A Pagar - Obter Todos", "\tComo cliente da API do MyMoney\r\n\tEu gostaria de obter todas as contas à pagar", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,14 +80,14 @@ namespace MyMoney.Api.FunctionalTests.BehavioralTests.ContasAPagar
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Criar Nova Conta A Pagar com sucesso")]
-        [Xunit.TraitAttribute("FeatureTitle", "Conta A Pagar - Criar")]
-        [Xunit.TraitAttribute("Description", "Criar Nova Conta A Pagar com sucesso")]
-        public virtual void CriarNovaContaAPagarComSucesso()
+        [Xunit.SkippableFactAttribute(DisplayName="Obter todas as contas à pagar com sucesso - Contas à pagar existentes")]
+        [Xunit.TraitAttribute("FeatureTitle", "Conta A Pagar - Obter Todos")]
+        [Xunit.TraitAttribute("Description", "Obter todas as contas à pagar com sucesso - Contas à pagar existentes")]
+        public virtual void ObterTodasAsContasAPagarComSucesso_ContasAPagarExistentes()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Criar Nova Conta A Pagar com sucesso", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Obter todas as contas à pagar com sucesso - Contas à pagar existentes", null, tagsOfScenario, argumentsOfScenario);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -112,26 +112,26 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("for realizada a autenticação com um usuário válido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line hidden
 #line 7
- testRunner.And("for adiconada uma nova conta a pagar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+ testRunner.And("existirem contas à pagar cadastradas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line hidden
 #line 8
- testRunner.Then("a nova conta a pagar será adicionada à base de dados", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+ testRunner.And("for enviada requisição para obter todas as contas à pagar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line hidden
 #line 9
- testRunner.And("será devolvida a nova conta a pagar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+ testRunner.Then("todas as contas à pagar serão retornadas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Criar Nova Conta A Pagar Erro Dados Inválidos")]
-        [Xunit.TraitAttribute("FeatureTitle", "Conta A Pagar - Criar")]
-        [Xunit.TraitAttribute("Description", "Criar Nova Conta A Pagar Erro Dados Inválidos")]
-        public virtual void CriarNovaContaAPagarErroDadosInvalidos()
+        [Xunit.SkippableFactAttribute(DisplayName="Obter todas as contas à pagar com sucesso - Contas à pagar inexistentes")]
+        [Xunit.TraitAttribute("FeatureTitle", "Conta A Pagar - Obter Todos")]
+        [Xunit.TraitAttribute("Description", "Obter todas as contas à pagar com sucesso - Contas à pagar inexistentes")]
+        public virtual void ObterTodasAsContasAPagarComSucesso_ContasAPagarInexistentes()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Criar Nova Conta A Pagar Erro Dados Inválidos", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Obter todas as contas à pagar com sucesso - Contas à pagar inexistentes", null, tagsOfScenario, argumentsOfScenario);
 #line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -156,13 +156,13 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("for realizada a autenticação com um usuário válido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line hidden
 #line 13
- testRunner.And("for adiconada uma nova conta a pagar com dados inválidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+ testRunner.And("não existirem contas à pagar cadastradas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line hidden
 #line 14
- testRunner.Then("a nova conta a pagar não será adicionada à base de dados", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+ testRunner.And("for enviada requisição para obter todas as contas à pagar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line hidden
 #line 15
- testRunner.And("será devolvida mensagem de erro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+ testRunner.Then("será retornada uma lista vazia de contas à pagar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -175,12 +175,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                ContaAPagar_CriarFeature.FeatureSetup();
+                ContaAPagar_ObterTodosFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                ContaAPagar_CriarFeature.FeatureTearDown();
+                ContaAPagar_ObterTodosFeature.FeatureTearDown();
             }
         }
     }
