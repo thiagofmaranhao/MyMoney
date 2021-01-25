@@ -20,4 +20,4 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release /home/runner/work/MyMoney/MyMoney/src/Api/MyMoney.Api.WebApi.sln
     - name: Test
-      run: dotnet test /home/runner/work/MyMoney/MyMoney/src/Api/MyMoney.Api.WebApi.sln
+      run: dotnet test --configuration Release /home/runner/work/MyMoney/MyMoney/src/Api/MyMoney.Api.WebApi.sln
