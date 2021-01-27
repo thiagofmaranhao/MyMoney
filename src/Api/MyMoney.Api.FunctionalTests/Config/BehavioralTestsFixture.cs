@@ -1,14 +1,15 @@
-﻿using System;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using MyMoney.Api.Business.Models;
 using MyMoney.Api.Data.Context;
 using MyMoney.Api.Data.Repository;
 using MyMoney.Api.WebApi;
 using MyMoney.Api.WebApi.ViewModels;
 using Newtonsoft.Json;
+using System;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace MyMoney.Api.FunctionalTests.Config
@@ -24,8 +25,10 @@ namespace MyMoney.Api.FunctionalTests.Config
         public readonly ContaAPagarRepository ContaAPagarRepository;
         public readonly MyMoneyDbContext Context;
         public readonly string Email;
-        public LoginResponseViewModel LoginResponse { get; private set; }
         private const string Password = "Teste@123";
+        public HttpResponseMessage Response { get; private set; }
+        public LoginResponseViewModel LoginResponse { get; private set; }
+        public ContaAPagarViewModel ContaAPagarViewModel { get; private set; }
 
         public BehavioralTestsFixture()
         {
@@ -60,10 +63,65 @@ namespace MyMoney.Api.FunctionalTests.Config
             Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
         }
 
+        public async Task CriarContaAPagarValidaAsync()
+        {
+            ContaAPagarViewModel = new ContaAPagarViewModel
+            {
+                Nome = "Energia",
+                Descricao = "Conta de Energia - Energisa",
+                DataVencimento = DateTime.Today,
+                Valor = 100
+            };
+
+            Response = await Client.PostAsJsonAsync("api/v1/contasapagar", ContaAPagarViewModel);
+        }
+
+        public async Task CriarContaAPagarInvalidaAsync()
+        {
+            ContaAPagarViewModel = new ContaAPagarViewModel
+            {
+                Nome = "A",
+                Descricao = "C",
+                DataVencimento = DateTime.Today,
+                Valor = -1
+            };
+
+            Response = await Client.PostAsJsonAsync("api/v1/contasapagar", ContaAPagarViewModel);
+        }
+
+        public async Task RemoverContaAPagarDaBaseAsync(Guid id)
+        {
+            ContaAPagarRepository.Remover(id);
+
+            await Context.SaveChangesAsync();
+        }
+
+        public async Task<ContaAPagar> ObterNaBaseContaAPagarAdicionadaAsync()
+        {
+            return (await ContaAPagarRepository.BuscarAsync(
+                c =>
+                    c.Valor == ContaAPagarViewModel.Valor &&
+                    c.Descricao == ContaAPagarViewModel.Descricao &&
+                    c.Nome == ContaAPagarViewModel.Nome &&
+                    c.DataVencimento == ContaAPagarViewModel.DataVencimento)).FirstOrDefault();
+        }
+
+        public async Task ObterTodasContasAPagarAsync()
+        {
+            Response = await Client.GetAsync("api/v1/contasapagar");
+        }
+
+        public async Task ObterContaAPagarAsync(Guid id)
+        {
+            Response = await Client.GetAsync($"api/v1/contasapagar/{id}");
+        }
+
         public void Dispose()
         {
-            Client.Dispose();
-            Factory.Dispose();
+            Client?.Dispose();
+            Factory?.Dispose();
+            Context?.Dispose();
+            ContaAPagarRepository?.Dispose();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -50,6 +51,18 @@ namespace MyMoney.Api.WebApi.V1.Controllers
         public async Task<IEnumerable<ContaAPagarViewModel>> ObterTodosAsync()
         {
             return _mapper.Map<IEnumerable<ContaAPagarViewModel>>(await _contaAPagarRepository.ObterTodosAsync());
+        }
+
+        [ClaimsAuthorize("ContasAPagar","Consultar")]
+        [HttpGet("{id:guid}")]
+        public async Task<ActionResult<ContaAPagarViewModel>> ObterPorIdAsync(Guid id)
+        {
+            var contaAPagarViewModel =
+                _mapper.Map<ContaAPagarViewModel>(await _contaAPagarRepository.ObterPorIdAsync(id));
+
+            if (contaAPagarViewModel == null) return NotFound();
+
+            return contaAPagarViewModel;
         }
     }
 }

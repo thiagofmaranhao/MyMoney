@@ -18,6 +18,6 @@ namespace MyMoney.Api.WebApi.ViewModels
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public decimal Valor { get; set; }
 
-        public DateTime DataVencimento { get; set; }
+        public DateTime? DataVencimento { get; set; }
     }
 }
