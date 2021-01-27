@@ -34,11 +34,11 @@ Sistema de Controle Financeiro
 - Api
   - Funcionalidades
     - [Em Desenvolvimento] Contas à Pagar 
+      - Obter
+      - ObterTodas
       - Criar 
       - [Pendente] Alterar
       - [Pendente] Excluir
-      - [Pendente] Obter
-      - [Pendente] ObterTodas
   - Arquitetura do Software (Projetos)
     - MyMoney.Api (WebApi)
     - MyMoney.Business (Camada de negócio)
