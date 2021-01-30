@@ -1,7 +1,7 @@
-﻿using System.IO;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using MyMoney.Api.Data.Context;
+using System.IO;
 
 namespace MyMoney.Api.FunctionalTests.Config
 {

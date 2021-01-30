@@ -1,9 +1,7 @@
 ﻿using FluentAssertions;
-using MyMoney.Api.Business.Models;
 using MyMoney.Api.FunctionalTests.Config;
 using MyMoney.Api.WebApi;
 using MyMoney.Api.WebApi.ViewModels;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Json;
@@ -50,7 +48,7 @@ namespace MyMoney.Api.FunctionalTests.BehavioralTests.ContasAPagar
                 (await _testsFixture.Response.Content.ReadFromJsonAsync<IEnumerable<ContaAPagarViewModel>>())
                 .ToList();
 
-            contasAPagar.ForEach(async c => await _testsFixture.RemoverContaAPagarDaBaseAsync(c.Id));
+            contasAPagar.ForEach(async c => await _testsFixture.RemoverContaAPagarAsync(c.Id));
         }
 
         [Then(@"todas as contas à pagar serão retornadas")]
@@ -65,7 +63,7 @@ namespace MyMoney.Api.FunctionalTests.BehavioralTests.ContasAPagar
             contasAPagar.Should().NotBeNull();
             contasAPagar.Count.Should().BePositive();
 
-            contasAPagar.ForEach(async c => await _testsFixture.RemoverContaAPagarDaBaseAsync(c.Id));
+            contasAPagar.ForEach(async c => await _testsFixture.RemoverContaAPagarAsync(c.Id));
         }
 
         [Then(@"será retornada uma lista vazia de contas à pagar")]

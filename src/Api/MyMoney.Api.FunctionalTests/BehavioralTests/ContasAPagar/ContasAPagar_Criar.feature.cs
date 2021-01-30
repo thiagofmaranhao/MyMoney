@@ -115,10 +115,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("for adiconada uma nova conta a pagar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line hidden
 #line 8
- testRunner.Then("a nova conta a pagar será adicionada à base de dados", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+ testRunner.Then("será devolvida a nova conta a pagar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
 #line 9
- testRunner.And("será devolvida a nova conta a pagar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+ testRunner.And("a nova conta a pagar será adicionada à base de dados", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -159,10 +159,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("for adiconada uma nova conta a pagar com dados inválidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line hidden
 #line 14
- testRunner.Then("a nova conta a pagar não será adicionada à base de dados", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
-#line hidden
-#line 15
- testRunner.And("será devolvida mensagem de erro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+ testRunner.Then("será devolvida mensagem de erro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Linq;
-using FluentAssertions;
+﻿using FluentAssertions;
 using MyMoney.Api.Business.Models;
 using MyMoney.Api.Business.Models.Validations;
+using System;
+using System.Linq;
 using Xunit;
 
 namespace MyMoney.Api.UnitTests.Business.Models.Validations

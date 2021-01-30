@@ -1,8 +1,8 @@
-﻿using System;
+﻿using MyMoney.Api.Business.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using MyMoney.Api.Business.Models;
 
 namespace MyMoney.Api.Business.Interfaces
 {

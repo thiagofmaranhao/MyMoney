@@ -66,7 +66,7 @@ namespace MyMoney.Api.FunctionalTests.BehavioralTests.ContasAPagar
             contaAPagarRecebida.Valor.Should().Be(_testsFixture.ContaAPagarViewModel.Valor);
             contaAPagarRecebida.Id.Should().NotBeEmpty();
 
-            await _testsFixture.RemoverContaAPagarDaBaseAsync(contaAPagarRecebida.Id);
+            await _testsFixture.RemoverContaAPagarAsync(contaAPagarRecebida.Id);
         }
 
         [Then(@"será retornado StatusCode 404_Not_Found")]

@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using System.Linq;
+using System.Security.Claims;
 
 namespace MyMoney.Api.WebApi.Extensions
 {
     public class CustomAuthorize
-    {public static bool ValidarClaimsUsuario(HttpContext context, string claimName, string claimValue)
+    {
+        public static bool ValidarClaimsUsuario(HttpContext context, string claimName, string claimValue)
         {
             return context.User.Identity.IsAuthenticated &&
                    context.User.Claims.Any(c => c.Type == claimName && c.Value.Contains(claimValue));

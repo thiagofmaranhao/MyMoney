@@ -1,18 +1,18 @@
-﻿using System;
+﻿using KissLog;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
+using MyMoney.Api.Business.Interfaces;
+using MyMoney.Api.WebApi.Controllers;
+using MyMoney.Api.WebApi.Extensions;
+using MyMoney.Api.WebApi.ViewModels;
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using KissLog;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using MyMoney.Api.Business.Interfaces;
-using MyMoney.Api.WebApi.Controllers;
-using MyMoney.Api.WebApi.ViewModels;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
-using MyMoney.Api.WebApi.Extensions;
 
 namespace MyMoney.Api.WebApi.V1.Controllers
 {
@@ -69,11 +69,11 @@ namespace MyMoney.Api.WebApi.V1.Controllers
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
             var result = await _signInManager
-                .PasswordSignInAsync(loginUser.Email, loginUser.Password, false,true);
+                .PasswordSignInAsync(loginUser.Email, loginUser.Password, false, true);
 
             if (result.Succeeded)
             {
-                _logger.Info("Usuário "+ loginUser.Email +" logado com sucesso");
+                _logger.Info("Usuário " + loginUser.Email + " logado com sucesso");
                 return CustomResponse(await GerarJwtAsync(loginUser.Email));
             }
             if (result.IsLockedOut)
@@ -128,7 +128,7 @@ namespace MyMoney.Api.WebApi.V1.Controllers
                 {
                     Id = user.Id,
                     Email = user.Email,
-                    Claims = claims.Select(c=> new ClaimViewModel{ Type = c.Type, Value = c.Value})
+                    Claims = claims.Select(c => new ClaimViewModel { Type = c.Type, Value = c.Value })
                 }
             };
 
