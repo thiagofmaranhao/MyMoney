@@ -97,7 +97,7 @@ namespace MyMoney.Api.FunctionalTests.Config
 
         public async Task RemoverContaAPagarAsync(Guid id)
         {
-            await Client.DeleteAsync($"api/v1/contasapagar/{id}");
+            Response = await Client.DeleteAsync($"api/v1/contasapagar/{id}");
         }
 
         public async Task ObterTodasContasAPagarAsync()
