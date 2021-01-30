@@ -1,6 +1,6 @@
 ﻿using MyMoney.Api.Business.Interfaces;
-using System.Threading.Tasks;
 using MyMoney.Api.Data.Context;
+using System.Threading.Tasks;
 
 namespace MyMoney.Api.Data.Repository
 {

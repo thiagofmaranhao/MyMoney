@@ -1,6 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Threading.Tasks;
 using MyMoney.Api.Business.Models;
 using MyMoney.Api.Data.Mappings;
 

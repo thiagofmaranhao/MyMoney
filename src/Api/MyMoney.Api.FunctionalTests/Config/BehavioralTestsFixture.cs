@@ -1,11 +1,7 @@
-﻿using MyMoney.Api.Business.Models;
-using MyMoney.Api.Data.Context;
-using MyMoney.Api.Data.Repository;
-using MyMoney.Api.WebApi;
+﻿using MyMoney.Api.WebApi;
 using MyMoney.Api.WebApi.ViewModels;
 using Newtonsoft.Json;
 using System;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
@@ -21,9 +17,6 @@ namespace MyMoney.Api.FunctionalTests.Config
     {
         public readonly MyMoneyApiFactory<TStartup> Factory;
         public readonly HttpClient Client;
-        public readonly RepositoryTestsBase RepositoryTests;
-        public readonly ContaAPagarRepository ContaAPagarRepository;
-        public readonly MyMoneyDbContext Context;
         public readonly string Email;
         private const string Password = "Teste@123";
         public HttpResponseMessage Response { get; private set; }
@@ -34,9 +27,6 @@ namespace MyMoney.Api.FunctionalTests.Config
         {
             Factory = new MyMoneyApiFactory<TStartup>();
             Client = Factory.CreateClient();
-            RepositoryTests = new RepositoryTestsBase();
-            Context = RepositoryTests.GetContext();
-            ContaAPagarRepository = new ContaAPagarRepository(Context);
             Email = "teste@teste.com";
         }
 
@@ -76,6 +66,22 @@ namespace MyMoney.Api.FunctionalTests.Config
             Response = await Client.PostAsJsonAsync("api/v1/contasapagar", ContaAPagarViewModel);
         }
 
+        public async Task AlterarContaAPagarAsync(ContaAPagarViewModel contaAPagarViewModel)
+        {
+            ContaAPagarViewModel = contaAPagarViewModel;
+
+            Response = await Client.PutAsJsonAsync($"api/v1/contasapagar/{contaAPagarViewModel.Id}",
+                contaAPagarViewModel);
+        }
+
+        public async Task AlterarContaAPagarAsync(Guid idUrl, ContaAPagarViewModel contaAPagarViewModel)
+        {
+            ContaAPagarViewModel = contaAPagarViewModel;
+
+            Response = await Client.PutAsJsonAsync($"api/v1/contasapagar/{idUrl}",
+                contaAPagarViewModel);
+        }
+
         public async Task CriarContaAPagarInvalidaAsync()
         {
             ContaAPagarViewModel = new ContaAPagarViewModel
@@ -89,21 +95,9 @@ namespace MyMoney.Api.FunctionalTests.Config
             Response = await Client.PostAsJsonAsync("api/v1/contasapagar", ContaAPagarViewModel);
         }
 
-        public async Task RemoverContaAPagarDaBaseAsync(Guid id)
+        public async Task RemoverContaAPagarAsync(Guid id)
         {
-            ContaAPagarRepository.Remover(id);
-
-            await Context.SaveChangesAsync();
-        }
-
-        public async Task<ContaAPagar> ObterNaBaseContaAPagarAdicionadaAsync()
-        {
-            return (await ContaAPagarRepository.BuscarAsync(
-                c =>
-                    c.Valor == ContaAPagarViewModel.Valor &&
-                    c.Descricao == ContaAPagarViewModel.Descricao &&
-                    c.Nome == ContaAPagarViewModel.Nome &&
-                    c.DataVencimento == ContaAPagarViewModel.DataVencimento)).FirstOrDefault();
+            await Client.DeleteAsync($"api/v1/contasapagar/{id}");
         }
 
         public async Task ObterTodasContasAPagarAsync()
@@ -120,8 +114,6 @@ namespace MyMoney.Api.FunctionalTests.Config
         {
             Client?.Dispose();
             Factory?.Dispose();
-            Context?.Dispose();
-            ContaAPagarRepository?.Dispose();
         }
     }
 }

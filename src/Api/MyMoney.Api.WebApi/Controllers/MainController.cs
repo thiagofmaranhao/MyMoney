@@ -1,9 +1,9 @@
-﻿using System.Linq;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using MyMoney.Api.Business.Interfaces;
 using MyMoney.Api.Business.Notifications;
 using MyMoney.Api.WebApi.ViewModels;
+using System.Linq;
 
 namespace MyMoney.Api.WebApi.Controllers
 {

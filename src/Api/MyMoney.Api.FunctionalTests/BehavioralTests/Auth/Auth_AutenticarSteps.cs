@@ -1,8 +1,8 @@
-﻿using System.Net.Http;
-using System.Threading.Tasks;
-using FluentAssertions;
+﻿using FluentAssertions;
 using MyMoney.Api.FunctionalTests.Config;
 using MyMoney.Api.WebApi;
+using System.Net.Http;
+using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 using Xunit;
 

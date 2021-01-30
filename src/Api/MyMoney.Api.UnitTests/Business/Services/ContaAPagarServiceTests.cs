@@ -1,12 +1,12 @@
-﻿using System;
-using System.Threading.Tasks;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Moq;
 using Moq.AutoMock;
 using MyMoney.Api.Business.Interfaces;
 using MyMoney.Api.Business.Models;
 using MyMoney.Api.Business.Notifications;
 using MyMoney.Api.Business.Services;
+using System;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace MyMoney.Api.UnitTests.Business.Services

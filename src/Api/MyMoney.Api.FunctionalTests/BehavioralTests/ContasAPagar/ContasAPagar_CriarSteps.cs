@@ -37,10 +37,11 @@ namespace MyMoney.Api.FunctionalTests.BehavioralTests.ContasAPagar
         public async Task EntaoANovaContaAPagarSeraAdicionadaABaseDeDadosAsync()
         {
             // Arrange&Act
-            var contasAPagar = await _testsFixture.ObterNaBaseContaAPagarAdicionadaAsync();
+            await _testsFixture.ObterContaAPagarAsync(_testsFixture.ContaAPagarViewModel.Id);
+            var contaAPagarViewModel = await _testsFixture.Response.Content.ReadFromJsonAsync<ContaAPagarViewModel>();
 
             // Assert
-            contasAPagar.Should().NotBeNull();
+            contaAPagarViewModel.Should().NotBeNull();
         }
 
         [Then(@"será devolvida a nova conta a pagar")]
@@ -62,7 +63,7 @@ namespace MyMoney.Api.FunctionalTests.BehavioralTests.ContasAPagar
             contaAPagarRecebida.Valor.Should().Be(_testsFixture.ContaAPagarViewModel.Valor);
             contaAPagarRecebida.Id.Should().NotBeEmpty();
 
-            await _testsFixture.RemoverContaAPagarDaBaseAsync(contaAPagarRecebida.Id);
+            await _testsFixture.RemoverContaAPagarAsync(contaAPagarRecebida.Id);
         }
         [When(@"for adiconada uma nova conta a pagar com dados inválidos")]
         public async Task QuandoForAdiconadaUmaNovaContaAPagarComDadosInvalidosAsync()
@@ -72,16 +73,6 @@ namespace MyMoney.Api.FunctionalTests.BehavioralTests.ContasAPagar
 
             // Assert
             _testsFixture.Response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
-        }
-
-        [Then(@"a nova conta a pagar não será adicionada à base de dados")]
-        public async Task EntaoANovaContaAPagarNaoSeraAdicionadaABaseDeDadosAsync()
-        {
-            // Arrange&Act
-            var contasAPagar = await _testsFixture.ObterNaBaseContaAPagarAdicionadaAsync();
-
-            // Assert
-            contasAPagar.Should().BeNull();
         }
 
         [Then(@"será devolvida mensagem de erro")]

@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using MyMoney.Api.Business.Notifications;
+﻿using MyMoney.Api.Business.Notifications;
+using System.Collections.Generic;
 
 namespace MyMoney.Api.Business.Interfaces
 {
