@@ -95,14 +95,15 @@ namespace MyMoney.Api.FunctionalTests.BehavioralTests.ContasAPagar
         public async Task EntaoSeraDevolvidaAContaAPagarAlteradaAsync()
         {
             // Arrange&Act
-            var contaAPagarViewModel = await _testsFixture.Response.Content.ReadFromJsonAsync<ContaAPagarViewModel>();
+            var retorno = await _testsFixture.Response.Content.ReadFromJsonAsync<RetornoSucessoViewModel>();
+            var contaAPagarViewModel = JsonConvert.DeserializeObject<ContaAPagarViewModel>(retorno.Data.ToString());
 
             // Assert
-            contaAPagarViewModel.Id.Should().Be(contaAPagarViewModel.Id);
-            contaAPagarViewModel.Nome.Should().Be(contaAPagarViewModel.Nome);
-            contaAPagarViewModel.Descricao.Should().Be(contaAPagarViewModel.Descricao);
-            contaAPagarViewModel.DataVencimento.Should().Be(contaAPagarViewModel.DataVencimento);
-            contaAPagarViewModel.Valor.Should().Be(contaAPagarViewModel.Valor);
+            contaAPagarViewModel.Id.Should().Be(_testsFixture.ContaAPagarViewModel.Id);
+            contaAPagarViewModel.Nome.Should().Be(_testsFixture.ContaAPagarViewModel.Nome);
+            contaAPagarViewModel.Descricao.Should().Be(_testsFixture.ContaAPagarViewModel.Descricao);
+            contaAPagarViewModel.DataVencimento.Should().Be(_testsFixture.ContaAPagarViewModel.DataVencimento);
+            contaAPagarViewModel.Valor.Should().Be(_testsFixture.ContaAPagarViewModel.Valor);
 
             await _testsFixture.RemoverContaAPagarAsync(contaAPagarViewModel.Id);
         }
