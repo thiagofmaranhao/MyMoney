@@ -33,12 +33,12 @@ Sistema de Controle Financeiro
 ## Atividades de Implementação
 - Api
   - Funcionalidades
-    - [Em Desenvolvimento] Contas à Pagar 
+    - Contas à Pagar 
       - Obter
       - ObterTodas
       - Criar 
-      - [Pendente] Alterar
-      - [Pendente] Excluir
+      - Alterar
+      - Excluir
   - Arquitetura do Software (Projetos)
     - MyMoney.Api (WebApi)
     - MyMoney.Business (Camada de negócio)
