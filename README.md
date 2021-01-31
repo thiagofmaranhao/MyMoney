@@ -65,8 +65,3 @@ Sistema de Controle Financeiro
       - Autorização baseada em Claims
     - Deploy
       - IIS Local
-      - [Pendente] Cloud
-- [Pendente] Web
-  - [Pendente] Gerenciamento das Contas à pagar em aplicação Web
-- [Pendente] App
-  - [Pendente] Gerenciamento das Contas à pagar em mobile app
