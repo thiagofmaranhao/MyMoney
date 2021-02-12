@@ -33,12 +33,12 @@ Sistema de Controle Financeiro
 ## Atividades de Implementação
 - Api
   - Funcionalidades
-    - [Em Desenvolvimento] Contas à Pagar 
+    - Contas à Pagar 
       - Obter
       - ObterTodas
       - Criar 
-      - [Pendente] Alterar
-      - [Pendente] Excluir
+      - Alterar
+      - Excluir
   - Arquitetura do Software (Projetos)
     - MyMoney.Api (WebApi)
     - MyMoney.Business (Camada de negócio)
@@ -64,9 +64,4 @@ Sistema de Controle Financeiro
       - JWT
       - Autorização baseada em Claims
     - Deploy
-      - IIS Local
-      - [Pendente] Cloud
-- [Pendente] Web
-  - [Pendente] Gerenciamento das Contas à pagar em aplicação Web
-- [Pendente] App
-  - [Pendente] Gerenciamento das Contas à pagar em mobile app
+      - IIS Local 
