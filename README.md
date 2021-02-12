@@ -64,4 +64,4 @@ Sistema de Controle Financeiro
       - JWT
       - Autorização baseada em Claims
     - Deploy
-      - IIS Local
+      - IIS Local 
