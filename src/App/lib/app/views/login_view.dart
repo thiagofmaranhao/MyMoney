@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:mymoney_app/app/controllers/login_controller.dart';
+import 'package:mymoney_app/app/models/login_user_model.dart';
+import 'package:mymoney_app/app/models/response_login_model.dart';
 
 class LoginView extends StatefulWidget {
+  String email;
+
   @override
   _LoginViewState createState() => _LoginViewState();
 }
 
 class _LoginViewState extends State<LoginView> {
+  final _loginController = LoginController();
+
+  ResponseLoginModel responseLogin;
+
   String email = '';
   String senha = '';
 
@@ -22,9 +31,9 @@ class _LoginViewState extends State<LoginView> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 200,
-                  height: 100,
-                  child: Image.asset('assets/images/logo.jpg'),
+                  width: 400,
+                  height: 80,
+                  child: Image.asset('assets/images/logo.png'),
                 ),
                 Container(height: 10),
                 Card(
@@ -53,12 +62,17 @@ class _LoginViewState extends State<LoginView> {
                         RaisedButton(
                           textColor: Colors.white,
                           color: Colors.lightBlueAccent,
-                          onPressed: () {
-                            if (email == 'teste@teste.com' && senha == '123') {
+                          onPressed: () async {
+                            await _loginController.login(
+                                LoginUserModel(email: email, password: senha));
+
+                            if (_loginController.respostaLogin != null) {
+                              widget.email = _loginController
+                                  .respostaLogin.data.userToken.email;
                               Navigator.of(context)
                                   .pushReplacementNamed('/home');
                             } else {
-                              print('Usuario e/ou senha Inválidos');
+                              _showDialog(context);
                             }
                           },
                           child: Container(
@@ -79,4 +93,23 @@ class _LoginViewState extends State<LoginView> {
       ),
     );
   }
+}
+
+void _showDialog(BuildContext context) {
+  showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Erro'),
+          content: Text('Usuário e/ou senha inválido(s)'),
+          actions: [
+            FlatButton(
+              child: Text('Fechar'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      });
 }
