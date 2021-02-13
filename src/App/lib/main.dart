@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:mymoney_app/app/views/calendar_view.dart';
 
 import 'app/views/home_view.dart';
 import 'app/views/login_view.dart';
 
 main() {
-  runApp(AppWidget());
+  initializeDateFormatting().then((_) => runApp(AppWidget()));
 }
 
 class AppWidget extends StatelessWidget {
@@ -16,6 +18,7 @@ class AppWidget extends StatelessWidget {
       routes: {
         '/': (context) => LoginView(),
         '/home': (context) => HomeView(),
+        '/calendar': (context) => CalendarView(),
       },
     );
   }

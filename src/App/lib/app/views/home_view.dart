@@ -1,53 +1,115 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:mymoney_app/app/components/drawer_component.dart';
+import 'package:mymoney_app/app/controllers/home_controller.dart';
 
 class HomeView extends StatefulWidget {
   @override
-  _HomeViewState createState() => _HomeViewState();
+  HomeViewState createState() => HomeViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class HomeViewState extends State<HomeView> {
+  final controller = HomeController();
+
+  _start() {
+    return Container();
+  }
+
+  _loading() {
+    return Center(
+      child: CircularProgressIndicator(),
+    );
+  }
+
+  _success() {
+    return ListView.builder(
+      itemCount: controller.contasAPagar.length,
+      itemBuilder: (context, index) {
+        var contasAPagar = controller.contasAPagar[index];
+        return ListTile(
+          // TODO: Agrupar por dia
+          title: Center(
+              child: Text(contasAPagar.nome, style: TextStyle(fontSize: 20))),
+          subtitle: Column(
+            children: [
+              SizedBox(height: 5),
+              Text('Vencimento: ' +
+                  DateFormat('dd/MM/yyyy').format(contasAPagar.dataVencimento)),
+              Text('Valor: ' +
+                  NumberFormat.simpleCurrency(locale: 'pt_BR')
+                      .format(contasAPagar.valor)),
+              SizedBox(height: 15),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  _error() {
+    return Center(
+      child: RaisedButton(
+        onPressed: () {
+          controller.start();
+        },
+        child: Text('Tente novamente'),
+      ),
+    );
+  }
+
+  stateManagement(HomeState state) {
+    switch (state) {
+      case HomeState.start:
+        return _start();
+      case HomeState.loading:
+        return _loading();
+      case HomeState.success:
+        return _success();
+      case HomeState.error:
+        return _error();
+      default:
+        return _start();
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    controller.start();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: Column(
-          children: [
-            UserAccountsDrawerHeader(
-              currentAccountPicture: ClipRRect(
-                borderRadius: BorderRadius.circular(40),
-                child: Image.asset('assets/images/avatar.jpg'),
-              ),
-              // TODO: Como trazer o e-mail retornado no token ou passado no login para cá
-              accountEmail: Text('teste@teste.com'),
-              accountName: null,
-            ),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Início'),
-              onTap: () {
-                Navigator.of(context).pushReplacementNamed('/home');
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Sair'),
-              onTap: () {
-                Navigator.of(context).pushReplacementNamed('/');
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: DrawerComponent(),
       appBar: AppBar(
         title: Text('Contas à pagar'),
         actions: [
-          // TODO: Colocar ação no ícone/imagem
-          Icon(Icons.event_rounded),
-          // TODO: Verificar forma melhor de separar os ícones
-          Text('     '),
-          // TODO: Colocar ação no ícone/imagem
-          Icon(Icons.add_circle_outline_sharp),
+          IconButton(
+            icon: Icon(Icons.refresh_outlined),
+            onPressed: () {
+              controller.start();
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.event_rounded),
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed('/calendar');
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.add_circle_outline_sharp),
+            onPressed: () {
+              //controller.start();
+            },
+          ),
         ],
+      ),
+      body: AnimatedBuilder(
+        animation: controller.state,
+        builder: (context, child) {
+          return stateManagement(controller.state.value);
+        },
       ),
     );
   }
