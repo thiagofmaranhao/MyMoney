@@ -100,7 +100,7 @@ class HomeViewState extends State<HomeView> {
           IconButton(
             icon: Icon(Icons.add_circle_outline_sharp),
             onPressed: () {
-              //controller.start();
+              Navigator.of(context).pushReplacementNamed('/manutencao');
             },
           ),
         ],

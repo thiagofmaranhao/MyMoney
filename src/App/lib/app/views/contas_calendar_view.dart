@@ -11,7 +11,6 @@ class ContasCalendarView extends StatefulWidget {
 class _ContasCalendarViewState extends State<ContasCalendarView> {
   CalendarController _calendarController;
   ContasCalendarController _contasCalendarController;
-  List _selectedEvents;
 
   _start() {
     return Container();
@@ -28,9 +27,6 @@ class _ContasCalendarViewState extends State<ContasCalendarView> {
       calendarController: _calendarController,
       events: _contasCalendarController.events,
       locale: 'pt_BR',
-      onDaySelected: _onDaySelected,
-      onVisibleDaysChanged: _onVisibleDaysChanged,
-      onCalendarCreated: _onCalendarCreated,
     );
   }
 
@@ -74,23 +70,6 @@ class _ContasCalendarViewState extends State<ContasCalendarView> {
     super.dispose();
   }
 
-  void _onDaySelected(DateTime day, List events, List holidays) {
-    print('CALLBACK: _onDaySelected');
-    setState(() {
-      _selectedEvents = events;
-    });
-  }
-
-  void _onVisibleDaysChanged(
-      DateTime first, DateTime last, CalendarFormat format) {
-    print('CALLBACK: _onVisibleDaysChanged');
-  }
-
-  void _onCalendarCreated(
-      DateTime first, DateTime last, CalendarFormat format) {
-    print('CALLBACK: _onCalendarCreated');
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,7 +78,7 @@ class _ContasCalendarViewState extends State<ContasCalendarView> {
         title: Text('Contas à pagar'),
         actions: [
           IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: Icon(Icons.home),
             onPressed: () {
               Navigator.of(context).pushReplacementNamed('/home');
             },
@@ -107,12 +86,17 @@ class _ContasCalendarViewState extends State<ContasCalendarView> {
           IconButton(
             icon: Icon(Icons.add_circle_outline_sharp),
             onPressed: () {
-              //controller.start();
+              Navigator.of(context).pushReplacementNamed('/manutencao');
             },
           ),
         ],
       ),
-      body: stateManagement(_contasCalendarController.state.value),
+      body: AnimatedBuilder(
+        animation: _contasCalendarController.state,
+        builder: (context, child) {
+          return stateManagement(_contasCalendarController.state.value);
+        },
+      ),
     );
   }
 }

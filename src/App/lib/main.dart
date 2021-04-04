@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:mymoney_app/app/views/calendar_view.dart';
+import 'package:mymoney_app/app/views/contas_manutencao_view.dart';
 
+import 'app/views/contas_calendar_view.dart';
 import 'app/views/home_view.dart';
 import 'app/views/login_view.dart';
 
@@ -18,7 +19,8 @@ class AppWidget extends StatelessWidget {
       routes: {
         '/': (context) => LoginView(),
         '/home': (context) => HomeView(),
-        '/calendar': (context) => CalendarView(),
+        '/calendar': (context) => ContasCalendarView(),
+        '/manutencao': (context) => ContasManutencaoView(),
       },
     );
   }
